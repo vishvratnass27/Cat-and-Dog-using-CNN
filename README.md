@@ -2,17 +2,24 @@ Here’s a README.md file that explains the project, setup, and usage, along wit
 
 # CNN Cat and Dog Classifier using Keras
 
-This project implements a Convolutional Neural Network (CNN) model using Keras to classify images of cats and dogs. The model is trained on the Cats and Dogs dataset and saved as an .h5 file, which can later be used for predictions.
+This project implements a Convolutional Neural Network (CNN) model using Keras to classify images of cats and dogs. 
+
+The model is trained on the Cats and Dogs dataset and saved as an .h5 file, which can later be used for predictions.
 
 # Dataset
-The dataset used for training the model consists of images of cats and dogs, organized into folders for each class. You can download the dataset from the following link
+The dataset used for training the model consists of images of cats and dogs, organized into folders for each class. 
+
+You can download the dataset from the following link
 
 # Folder Structure
 # The dataset should be structured as follows:
 cnn_dataset/
 ├── cat/       # Folder with cat images
+
 ├── dog/       # Folder with dog images
+
 ├── single_prediction/
+
 │   └── cat_or_dog_1.jpg  # Image used for testing single predictions
 
 # Model Architecture
