@@ -11,9 +11,12 @@ The dataset used for training the model consists of images of cats and dogs, org
 
 You can download the dataset from the following link
 
+https://drive.google.com/drive/folders/1CSg8O8NqMp8YZaGClsbl9EvrfHVMDhKh?usp=sharing
+
 # Folder Structure
 # The dataset should be structured as follows:
 cnn_dataset/
+
 ├── cat/       # Folder with cat images
 
 ├── dog/       # Folder with dog images
@@ -125,7 +128,7 @@ Make sure you have Python installed. Then, install the required dependencies usi
 pip install tensorflow keras keras_preprocessing numpy
 
 # 2. Download Dataset
-Download the dataset from this link and ensure it's structured correctly (see the Folder Structure section).
+Download the dataset from this link https://drive.google.com/drive/folders/1CSg8O8NqMp8YZaGClsbl9EvrfHVMDhKh?usp=sharing and ensure it's structured correctly (see the Folder Structure section).
 
 # 3. Train the Model
 Run the following script to train the model and save it as my.h5:
