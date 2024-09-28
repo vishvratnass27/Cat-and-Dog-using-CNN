@@ -14,12 +14,10 @@ You can download the dataset from the following link
 # Folder Structure
 # The dataset should be structured as follows:
 cnn_dataset/
+
 ├── cat/       # Folder with cat images
-
 ├── dog/       # Folder with dog images
-
 ├── single_prediction/
-
 │   └── cat_or_dog_1.jpg  # Image used for testing single predictions
 
 # Model Architecture
