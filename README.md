@@ -14,10 +14,12 @@ You can download the dataset from the following link
 # Folder Structure
 # The dataset should be structured as follows:
 cnn_dataset/
-
 ├── cat/       # Folder with cat images
+
 ├── dog/       # Folder with dog images
+
 ├── single_prediction/
+
 │   └── cat_or_dog_1.jpg  # Image used for testing single predictions
 
 # Model Architecture
@@ -32,6 +34,7 @@ Dense Layer: 128 units, ReLU activation
 Output Layer: 1 unit, Sigmoid activation (for binary classification)
 
 # Code Overview
+
 # Model Creation and Compilation
 
 from keras.layers import Convolution2D, MaxPooling2D, Flatten, Dense
