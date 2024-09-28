@@ -26,11 +26,17 @@ cnn_dataset/
 The Convolutional Neural Network (CNN) has the following architecture:
 
 Convolutional Layer: 32 filters, kernel size (3,3), ReLU activation
+
 MaxPooling Layer: Pool size (2,2)
+
 Second Convolutional Layer: 32 filters, kernel size (3,3), ReLU activation
+
 MaxPooling Layer: Pool size (2,2)
+
 Flatten Layer: Converts pooled feature maps into a vector
+
 Dense Layer: 128 units, ReLU activation
+
 Output Layer: 1 unit, Sigmoid activation (for binary classification)
 
 # Code Overview
@@ -38,6 +44,7 @@ Output Layer: 1 unit, Sigmoid activation (for binary classification)
 # Model Creation and Compilation
 
 from keras.layers import Convolution2D, MaxPooling2D, Flatten, Dense
+
 from keras.models import Sequential
 
 # Initialize the model
@@ -45,16 +52,22 @@ model = Sequential()
 
 # Add convolutional and pooling layers
 model.add(Convolution2D(filters=32, kernel_size=(3,3), activation='relu', input_shape=(64, 64, 3)))
+
 model.add(MaxPooling2D(pool_size=(2, 2)))
+
 model.add(Convolution2D(filters=32, kernel_size=(3,3), activation='relu'))
+
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 # Flatten and add Dense layers
 model.add(Flatten())
+
 model.add(Dense(units=128, activation='relu'))
+
 model.add(Dense(units=1, activation='sigmoid'))
 
 # Compile the model
+
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Data Preprocessing and Augmentation
@@ -63,10 +76,12 @@ from keras_preprocessing.image import ImageDataGenerator
 
 # Data augmentation for training and testing
 train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
+
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 # Load training and test sets
 training_set = train_datagen.flow_from_directory('cnn_dataset', target_size=(64, 64), batch_size=32, class_mode='binary')
+
 test_set = test_datagen.flow_from_directory('cnn_dataset', target_size=(64, 64), batch_size=32, class_mode='binary')
 
 # Training the Model
@@ -80,7 +95,9 @@ model.save('my.h5')
 # Making Predictions
 
 from keras.models import load_model
+
 from keras.preprocessing import image
+
 import numpy as np
 
 # Load the trained model
@@ -88,11 +105,14 @@ m = load_model('my.h5')
 
 # Load and preprocess the test image
 test_image = image.load_img('cnn_dataset/single_prediction/cat_or_dog_1.jpg', target_size=(64,64))
+
 test_image = image.img_to_array(test_image)
+
 test_image = np.expand_dims(test_image, axis=0)
 
 # Make the prediction
 result = m.predict(test_image)
+
 if result[0][0] == 1.0:
     print('cat')
 else:
